@@ -22,7 +22,7 @@ public class Astronoat : MonoBehaviour
     public GameObject pause;
     public GameObject cont;
     public GameObject DeathScreen;
-    public GameManager managergame;
+
  
     public int motiveInt;
 
@@ -32,7 +32,7 @@ public class Astronoat : MonoBehaviour
         
         rb2D = GetComponent<Rigidbody2D>();
         Time.timeScale = 1;
-        motiveInt =gm.wordScore ;
+        motiveInt=gm.wordScore ;
     }
 
 
@@ -70,12 +70,15 @@ public class Astronoat : MonoBehaviour
 
 
             Destroy(collision.gameObject);
-            if (collision.gameObject.tag == "Earth")
+
+            if (collision.gameObject.tag== "Earth")
             {
+                Debug.Log("x");
                 randID = Random.Range(0, 5);
                 aus[0].Play();
-                managergame.UpdateScore(50);
-                managergame.UpdateWordScore(); motiveInt = gm.wordScore;
+                gm.UpdateScore(50);
+                gm.UpdateWordScore(); 
+                motiveInt = gm.wordScore;
                 if (motiveInt % 5 == 0 )
                 {
 
@@ -91,8 +94,10 @@ public class Astronoat : MonoBehaviour
             }
             else
             {
+
+                Debug.Log("7");
                 aus[1].Play();
-                managergame.UpdateScore(10);
+                gm.UpdateScore(10);
             }
         }
 

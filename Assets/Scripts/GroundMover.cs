@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundMover : MonoBehaviour
 {
 
-    public float speed;
+    public float speed=2;
     float groundLength;
 
     BoxCollider2D groundcollider;

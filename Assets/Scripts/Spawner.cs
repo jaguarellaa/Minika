@@ -39,12 +39,12 @@ public class Spawner : MonoBehaviour
     private void FixedUpdate()
     {   
 
-        if (gm.score <= 250)
+        if (gm.score <= 250) ///250
         {
 
 
-            player.transform.localScale = new Vector3(1f, 1f, 1f);
-            shadow.transform.localScale = new Vector3(1.5f,1.5f, 1.5f);
+            player.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+            shadow.transform.localScale = new Vector3(1.2f,1.2f, 1.2f);
             maxTime = 4f;
 
 
@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
             }
 
         }
-        else if (gm.score > 250&& gm.score <= 500)
+        else if (gm.score > 250&& gm.score <= 500) // 250 500
         {
             
 
@@ -74,7 +74,7 @@ public class Spawner : MonoBehaviour
         }
 
 
-        else if(gm.score >500&& gm.score <=1000)
+        else if(gm.score >500&& gm.score <=1000) //500 1000
         {
 
             
@@ -90,11 +90,11 @@ public class Spawner : MonoBehaviour
 
 
         }
-        else if (gm.score >1000 && gm.score <= 1500)
+        else if (gm.score >1000 && gm.score <= 1500) //1000 1500
         {
 
-            player.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
-            shadow.transform.localScale = new Vector3(1.35f,1.35f, 1.35f);
+            player.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            shadow.transform.localScale = new Vector3(1.1f,1.1f, 1.1f);
             maxTime = 2.5f;
             timer += Time.deltaTime;
 
@@ -138,8 +138,8 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("0.3-1");
 
-            player.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            shadow.transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
+            player.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            shadow.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             maxTime = 1f;
             timer += Time.deltaTime;
 
@@ -169,7 +169,7 @@ public class Spawner : MonoBehaviour
             randYPos);
         rand = Random.Range(0, newColumn.transform.GetChild(2).childCount);
         newColumn.transform.GetChild(2).GetChild(rand).gameObject.SetActive(true);
-        if (rand == 6) newColumn.transform.GetChild(2).tag = "Earth";
+        if (rand == 5) newColumn.transform.GetChild(2).tag = "Earth";
 
 
     }
